@@ -3583,7 +3583,7 @@ The checker runs `checkdoc-current-buffer'."
 
 (flycheck-define-checker erlang
   "An Erlang syntax checker using the Erlang interpreter."
-  :command ("erlc" "-o" temporary-directory "-Wall" source)
+  :command ("erlc" "-I" "../include" "-o" temporary-directory "-Wall" source)
   :error-patterns
   ((warning line-start (file-name) ":" line ": Warning:" (message) line-end)
    (error line-start (file-name) ":" line ": " (message) line-end))
